@@ -87,7 +87,8 @@ export default function TypingInterface({
       >
         {/* Typing Text Display */}
         <div 
-          className="text-2xl leading-relaxed text-neutral-800 font-mono mb-6 select-none cursor-text"
+          className="text-xl leading-relaxed text-neutral-800 font-mono mb-6 select-none cursor-text max-w-none break-words whitespace-pre-wrap"
+          style={{ lineHeight: '2.2rem' }}
           onClick={() => isActive && inputRef.current?.focus()}
         >
           {renderText()}
