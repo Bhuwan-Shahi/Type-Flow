@@ -77,6 +77,31 @@ export default function Settings() {
     <div className="min-h-screen bg-gradient-to-br from-neutral-50 to-white">
       {/* Header */}
       <div className="border-b border-neutral-100 bg-white/80 backdrop-blur-sm">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <Link href="/" className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-gradient-to-r from-primary to-primary/80 rounded-xl flex items-center justify-center">
+                <Keyboard className="text-white" size={20} />
+              </div>
+              <span className="text-xl font-bold text-neutral-800">TypeFlow</span>
+            </Link>
+            
+            <nav className="flex items-center space-x-6">
+              <Link href="/" className="text-neutral-500 hover:text-neutral-800 transition-colors flex items-center space-x-1">
+                <Home size={16} />
+                <span>Dashboard</span>
+              </Link>
+              <Link href="/statistics" className="text-neutral-500 hover:text-neutral-800 transition-colors flex items-center space-x-1">
+                <BarChart3 size={16} />
+                <span>Statistics</span>
+              </Link>
+              <Link href="/settings" className="text-primary font-medium flex items-center space-x-1">
+                <SettingsIcon size={16} />
+                <span>Settings</span>
+              </Link>
+            </nav>
+          </div>
+        </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <motion.div
             className="flex items-center space-x-3"
