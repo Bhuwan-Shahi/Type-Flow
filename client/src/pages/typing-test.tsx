@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Keyboard, Trophy, TrendingUp, Github, Twitter, Linkedin } from "lucide-react";
+import { Keyboard, Trophy, TrendingUp, Github, Twitter, Linkedin, Settings, BarChart3 } from "lucide-react";
+import { Link } from "wouter";
 import StatisticsCards from "@/components/statistics-cards";
 import TestConfig from "@/components/test-config";
 import TypingInterface from "@/components/typing-interface";
@@ -29,9 +30,15 @@ export default function TypingTest() {
             </motion.div>
             
             <nav className="hidden md:flex items-center space-x-8">
-              <a href="#" className="text-neutral-500 hover:text-neutral-800 transition-colors">Dashboard</a>
-              <a href="#" className="text-neutral-500 hover:text-neutral-800 transition-colors">Statistics</a>
-              <a href="#" className="text-neutral-500 hover:text-neutral-800 transition-colors">Settings</a>
+              <Link href="/" className="text-neutral-500 hover:text-neutral-800 transition-colors">Dashboard</Link>
+              <Link href="/statistics" className="text-neutral-500 hover:text-neutral-800 transition-colors flex items-center space-x-1">
+                <BarChart3 size={16} />
+                <span>Statistics</span>
+              </Link>
+              <Link href="/settings" className="text-neutral-500 hover:text-neutral-800 transition-colors flex items-center space-x-1">
+                <Settings size={16} />
+                <span>Settings</span>
+              </Link>
               <button className="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition-colors font-medium">
                 Sign In
               </button>
