@@ -7,6 +7,7 @@ import TypingTest from "@/pages/typing-test";
 import Settings from "@/pages/settings";
 import Statistics from "@/pages/statistics";
 import NotFound from "@/pages/not-found";
+import React = require("react");
 
 function Router() {
   return (

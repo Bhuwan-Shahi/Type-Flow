@@ -7,6 +7,7 @@ import TypingInterface from "@/components/typing-interface";
 import ResultsModal from "@/components/results-modal";
 import PersonalRecords from "@/components/personal-records";
 import { useTypingTest } from "@/hooks/use-typing-test";
+import React = require("react");
 
 export default function TypingTest() {
   const typingTest = useTypingTest();
