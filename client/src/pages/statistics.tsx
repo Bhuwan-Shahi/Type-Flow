@@ -62,12 +62,38 @@ export default function Statistics() {
   if (isLoading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-neutral-50 to-white">
+        {/* Header */}
         <div className="border-b border-neutral-100 bg-white/80 backdrop-blur-sm">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div className="animate-pulse">
-              <div className="h-8 bg-neutral-200 rounded w-48 mb-2"></div>
-              <div className="h-4 bg-neutral-200 rounded w-72"></div>
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center h-16">
+              <Link href="/" className="flex items-center space-x-3">
+                <div className="w-10 h-10 bg-gradient-to-r from-primary to-primary/80 rounded-xl flex items-center justify-center">
+                  <Keyboard className="text-white" size={20} />
+                </div>
+                <span className="text-xl font-bold text-neutral-800">TypeFlow</span>
+              </Link>
+              
+              <nav className="flex items-center space-x-6">
+                <Link href="/" className="text-neutral-500 hover:text-neutral-800 transition-colors flex items-center space-x-1">
+                  <Home size={16} />
+                  <span>Dashboard</span>
+                </Link>
+                <Link href="/statistics" className="text-primary font-medium flex items-center space-x-1">
+                  <BarChart3 size={16} />
+                  <span>Statistics</span>
+                </Link>
+                <Link href="/settings" className="text-neutral-500 hover:text-neutral-800 transition-colors flex items-center space-x-1">
+                  <Settings size={16} />
+                  <span>Settings</span>
+                </Link>
+              </nav>
             </div>
+          </div>
+        </div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="animate-pulse">
+            <div className="h-8 bg-neutral-200 rounded w-48 mb-2"></div>
+            <div className="h-4 bg-neutral-200 rounded w-72"></div>
           </div>
         </div>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -145,7 +171,7 @@ export default function Statistics() {
                     <TrendingUp className="h-4 w-4 text-correct" />
                   </CardHeader>
                   <CardContent>
-                    <div className="text-2xl font-bold text-correct">{stats?.averageWpm || 0}</div>
+                    <div className="text-2xl font-bold text-correct">{(stats as any)?.averageWpm || 0}</div>
                     <div className="flex items-center text-xs text-neutral-500">
                       {wpmTrend > 0 ? (
                         <ArrowUp className="h-3 w-3 text-correct mr-1" />
@@ -169,7 +195,7 @@ export default function Statistics() {
                     <Target className="h-4 w-4 text-correct" />
                   </CardHeader>
                   <CardContent>
-                    <div className="text-2xl font-bold text-correct">{stats?.bestAccuracy || 0}%</div>
+                    <div className="text-2xl font-bold text-correct">{(stats as any)?.bestAccuracy || 0}%</div>
                     <p className="text-xs text-neutral-500">Highest precision</p>
                   </CardContent>
                 </Card>
@@ -186,7 +212,7 @@ export default function Statistics() {
                     <Clock className="h-4 w-4 text-neutral-600" />
                   </CardHeader>
                   <CardContent>
-                    <div className="text-2xl font-bold text-neutral-800">{stats?.totalTests || 0}</div>
+                    <div className="text-2xl font-bold text-neutral-800">{(stats as any)?.totalTests || 0}</div>
                     <p className="text-xs text-neutral-500">Tests completed</p>
                   </CardContent>
                 </Card>
@@ -361,7 +387,7 @@ export default function Statistics() {
                     <div className="space-y-2">
                       <h4 className="font-medium text-sm text-neutral-700">Total Time Practiced</h4>
                       <p className="text-2xl font-bold text-neutral-800">
-                        {Math.floor((stats?.totalTime || 0) / 60)}m {(stats?.totalTime || 0) % 60}s
+                        {Math.floor(((stats as any)?.totalTime || 0) / 60)}m {((stats as any)?.totalTime || 0) % 60}s
                       </p>
                     </div>
                     <div className="space-y-2">
@@ -370,7 +396,7 @@ export default function Statistics() {
                     </div>
                     <div className="space-y-2">
                       <h4 className="font-medium text-sm text-neutral-700">Average Accuracy</h4>
-                      <p className="text-2xl font-bold text-neutral-800">{stats?.averageAccuracy || 0}%</p>
+                      <p className="text-2xl font-bold text-neutral-800">{(stats as any)?.averageAccuracy || 0}%</p>
                     </div>
                     <div className="space-y-2">
                       <h4 className="font-medium text-sm text-neutral-700">Improvement Rate</h4>
@@ -381,13 +407,13 @@ export default function Statistics() {
                     <div className="space-y-2">
                       <h4 className="font-medium text-sm text-neutral-700">Best Day</h4>
                       <p className="text-lg font-medium text-neutral-800">
-                        {results?.length > 0 ? new Date(results[0].completedAt).toLocaleDateString() : 'N/A'}
+                        {resultsArray.length > 0 ? new Date(resultsArray[0].completedAt).toLocaleDateString() : 'N/A'}
                       </p>
                     </div>
                     <div className="space-y-2">
                       <h4 className="font-medium text-sm text-neutral-700">Consistency Score</h4>
                       <p className="text-2xl font-bold text-neutral-800">
-                        {results?.length > 0 ? Math.round(100 - (stats?.bestWpm - stats?.averageWpm) / stats?.bestWpm * 100) || 0 : 0}%
+                        {resultsArray.length > 0 ? Math.round(100 - ((stats as any)?.bestWpm - (stats as any)?.averageWpm) / (stats as any)?.bestWpm * 100) || 0 : 0}%
                       </p>
                     </div>
                   </div>
