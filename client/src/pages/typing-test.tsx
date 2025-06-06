@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import { Keyboard, Trophy, TrendingUp, Github, Twitter, Linkedin, Settings, BarChart3 } from "lucide-react";
 import { Link } from "wouter";
-import StatisticsCards from "@/components/statistics-cards";
-import TestConfig from "@/components/test-config";
-import TypingInterface from "@/components/typing-interface";
-import ResultsModal from "@/components/results-modal";
-import PersonalRecords from "@/components/personal-records";
-import { useTypingTest } from "@/hooks/use-typing-test";
+import StatisticsCards from "../components/statistics-cards";
+import TestConfig from "../components/test-config";
+import TypingInterface from "../components/typing-interface";
+import ResultsModal from "../components/results-modal";
+import PersonalRecords from "../components/personal-records";
+import { useTypingTest } from "../hooks/use-typing-test";
+
 import React = require("react");
 
 export default function TypingTest() {

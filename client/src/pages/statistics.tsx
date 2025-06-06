@@ -2,10 +2,19 @@ import { motion } from "framer-motion";
 import { BarChart3, TrendingUp, Target, Clock, Calendar, Trophy, ArrowUp, ArrowDown, Keyboard, Settings, Home } from "lucide-react";
 import { Link } from "wouter";
 import { useQuery } from "@tanstack/react-query";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Progress } from "@/components/ui/progress";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar } from "recharts";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
+import { Progress } from "../components/ui/progress";
+import LineChart from "recharts/lib/chart/LineChart";
+import Line from "recharts/lib/cartesian/Line";
+import XAxis from "recharts/lib/cartesian/XAxis";
+import YAxis from "recharts/lib/cartesian/YAxis";
+import CartesianGrid from "recharts/lib/cartesian/CartesianGrid";
+import Tooltip from "recharts/lib/component/Tooltip";
+import ResponsiveContainer from "recharts/lib/component/ResponsiveContainer";
+import BarChart from "recharts/lib/chart/BarChart";
+import Bar from "recharts/lib/cartesian/Bar";
+import React = require("react");
 
 export default function Statistics() {
   const { data: stats, isLoading: statsLoading } = useQuery({

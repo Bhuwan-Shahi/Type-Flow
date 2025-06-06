@@ -1,7 +1,9 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Play, RotateCcw } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "./ui/button";
+import React = require("react");
+
 
 interface TypingInterfaceProps {
   isActive: boolean;

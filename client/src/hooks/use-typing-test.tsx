@@ -1,8 +1,10 @@
 import { useState, useEffect, useCallback } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
-import { useToast } from "@/hooks/use-toast";
-import { getRandomText } from "@/lib/typing-texts";
+// Update the import path if the file is actually at src/lib/query-client.ts
+import { apiRequest } from "../lib/queryClient";
+import { useToast } from "./use-toast";
+import { getRandomText } from "../lib/typing-texts";
+import { Keyboard } from "lucide-react";
 
 interface TypingTestState {
   isActive: boolean;

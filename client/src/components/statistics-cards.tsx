@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import React = require("react");
 
 interface StatisticsCardsProps {
   wpm: number;

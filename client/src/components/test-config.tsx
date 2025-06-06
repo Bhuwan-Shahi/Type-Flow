@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { Button } from "./ui/button";
+import React = require("react");
 
 interface TestConfigProps {
   mode: "time" | "words";

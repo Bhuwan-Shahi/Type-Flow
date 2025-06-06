@@ -2,12 +2,14 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Settings as SettingsIcon, Monitor, Moon, Sun, Volume2, VolumeX, Palette, Type, Clock, Keyboard, BarChart3, Home } from "lucide-react";
 import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Switch } from "@/components/ui/switch";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Slider } from "@/components/ui/slider";
-import { Separator } from "@/components/ui/separator";
+import { Button } from "../components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
+import { Switch } from "../components/ui/switch";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select";
+import { Slider } from "../components/ui/slider";
+import { Separator } from "../components/ui/separator";
+import React = require("react");
+
 
 export default function Settings() {
   // Theme settings

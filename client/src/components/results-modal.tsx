@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Check, Trophy, RotateCcw, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "./ui/button";
+import React = require("react");
 
 interface ResultsModalProps {
   showResults: boolean;
